@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, textarea {
+      display: block;
+      margin-bottom: 10px;
+      width: 300px;
+      padding: 8px;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+    <form id="regForm" onsubmit="return validateForm()">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" />
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" />
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" />
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" />
+
+        <label for="address">Address:</label>
+        <textarea id="address"></textarea>
+
+        <button type="submit">Register</button>
+        <p id="formError" class="error"></p>
+    </form>
+
+  <script>
+    function validateForm() {
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const error = document.getElementById("formError");
+
+      // First Name validation
+      if (!/^[A-Za-z]{6,}$/.test(firstName)) {
+        error.innerText = "First Name must be alphabetic and at least 6 characters long.";
+        return false;
+      }
+
+      // Last Name not empty
+      if (lastName === "") {
+        error.innerText = "Last Name should not be empty.";
+        return false;
+      }
+
+      // Password length
+      if (password.length < 6) {
+        error.innerText = "Password must be at least 6 characters long.";
+        return false;
+      }
+
+      // Email validation
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailPattern.test(email)) {
+        error.innerText = "Please enter a valid email address.";
+        return false;
+      }
+
+      // Mobile number validation
+      if (!/^\d{10}$/.test(mobile)) {
+        error.innerText = "Mobile number must be exactly 10 digits.";
+        return false;
+      }
+
+      // Address validation
+      if (address === "") {
+        error.innerText = "Address should not be empty.";
+        return false;
+      }
+
+      // If all valid
+      error.innerText = "";
+      alert("Registration Successful!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
