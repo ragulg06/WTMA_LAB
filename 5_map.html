@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map with Hotspot, Frames, and Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .map-container, .hotspot-container, .frame-container {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Web Page with Map, Hotspot, Frames & Links</h1>
+
+    <!-- 🔹 Embedded Google Map -->
+    <div class="map-container">
+        <h2>Location Map</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27991418964!2d-74.25986790730288!3d40.69767006314447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5aa140c9b%3A0xb1c0b7bb7a35410b!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sin!4v1586194648795!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- 🔹 Image Map with Hotspots -->
+    <div class="hotspot-container">
+        <h2>Hotspot Example</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/World_map_blank_without_borders.svg" usemap="#worldmap" width="600" alt="World Map">
+
+        <map name="worldmap">
+            <area shape="rect" coords="100,80,160,140" alt="North America" href="https://en.wikipedia.org/wiki/North_America" target="_blank">
+            <area shape="rect" coords="280,130,340,180" alt="Europe" href="https://en.wikipedia.org/wiki/Europe" target="_blank">
+            <area shape="rect" coords="350,200,420,280" alt="Asia" href="https://en.wikipedia.org/wiki/Asia" target="_blank">
+        </map>
+    </div>
+
+    <!-- 🔹 Frame using iframe -->
+    <div class="frame-container">
+        <h2>Embedded Page with Links (Frame)</h2>
+        <iframe src="https://www.wikipedia.org" width="600" height="300" title="Wikipedia Frame"></iframe>
+    </div>
+
+    <!-- 🔹 Hyperlinks -->
+    <div>
+        <h2>Useful Links</h2>
+        <ul>
+            <li><a href="https://www.google.com/maps" target="_blank">Open Google Maps</a></li>
+            <li><a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Map" target="_blank">Learn About Maps on Wikipedia</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
